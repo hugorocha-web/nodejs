@@ -84,8 +84,10 @@ async function coisas() {
             clone.querySelector('#btndelet').addEventListener('click', apagar)
             clone.querySelector(".nome").textContent = "Nome: " + json[i].nome
             clone.querySelector(".email").textContent = "Email: " + json[i].email
+            clone.dataset.email = json[i].email
             clone.querySelector(".idade").textContent = "Idade: " + json[i].idade
             clone.style.display = 'flex'
+
             body.appendChild(clone)
 
         }
@@ -109,7 +111,7 @@ async function apagar(event){
     try {
         
 
-        let dados = await fetch(`http://localhost:3000/users/${event.target.previousElementSibling.children[1].textContent.slice(7)}`, {
+        let dados = await fetch(`http://localhost:3000/users/${event.currentTarget.parentElement.dataset.email}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'

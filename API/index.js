@@ -17,9 +17,9 @@ mongoose.connect('mongodb+srv://roxshugo424_db_user:yUFleDtHuQiqiZhg@cluster0.6u
 
 //isso cria um formato de arquivo pro banco
 const usuarioSchema = new mongoose.Schema({
-    nome: {type: String, require: true},
-    idade: {type: Number, require: true},
-    email: {type: String, require: true, unique:true}
+    nome: {type: String, required: true},
+    idade: {type: Number, required: true},
+    email: {type: String, required: true, unique:true}
 }, {timestamps: true}
 )
 
