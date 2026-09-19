@@ -22,8 +22,6 @@ async function enviar(){
         return
     }
 
-    console.log(nome, email, idade)
-
     let resposta = await fetch('http://localhost:3000/users', {
         method: 'POST',
         headers: {

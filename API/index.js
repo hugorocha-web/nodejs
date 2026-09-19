@@ -10,8 +10,8 @@ const port = 3000
 const app = express()
 
 //depois inicio o express colocando na variavel app
-
-mongoose.connect('mongodb+srv://roxshugo424_db_user:yUFleDtHuQiqiZhg@cluster0.6udxcla.mongodb.net/Usuarios?appName=Cluster0')
+process.loadEnvFile()
+mongoose.connect(process.env.MONGODB_URI)
 .then(()=> console.log('banco conectado com sucesso'))
 .catch(()=> console.log('erro ao conectar o banco'))
 
@@ -27,7 +27,7 @@ const usuarioSchema = new mongoose.Schema({
 const Usuario = mongoose.model('Usuario', usuarioSchema)
 
 //agora conectei o bando e adicionei o then 
-// mongodb+srv://roxshugo424_db_user:yUFleDtHuQiqiZhg@cluster0.6udxcla.mongodb.net/Usuarios?appName=Cluster0
+
 app.use(cors())
 app.use(express.json())
 //avisando que vou usar json
