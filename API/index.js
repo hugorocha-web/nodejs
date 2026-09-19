@@ -6,11 +6,11 @@ import cors from 'cors'
 
 
 
-const port = 3000
+const port = process.env.PORT || 3000
 const app = express()
 
 //depois inicio o express colocando na variavel app
-process.loadEnvFile()
+
 mongoose.connect(process.env.MONGODB_URI)
 .then(()=> console.log('banco conectado com sucesso'))
 .catch(()=> console.log('erro ao conectar o banco'))
@@ -80,7 +80,7 @@ app.delete('/users/:email', async (req, res) => {
 
 
 // servidor precisa saber qual a porta esperar requisições
-app.listen(port, ()  => {
-    console.log('servidor rodando na porta 3000')
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Servidor rodando na porta ${port}`)
 })
 
