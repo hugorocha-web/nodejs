@@ -64,7 +64,7 @@ app.delete('/users/:email', async (req, res) => {
 
     const usuario = await Usuario.findOneAndDelete({ email: email })
 
-    if (!Usuario) {
+    if (!usuario) {
         return res.status(404).json({
             erro: 'Usuário não encontrado'
         })
