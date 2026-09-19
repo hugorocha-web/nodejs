@@ -22,7 +22,7 @@ async function enviar(){
         return
     }
 
-    let resposta = await fetch('http://localhost:3000/users', {
+    let resposta = await fetch('https://nodejs-qo6y.onrender.com/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -65,7 +65,7 @@ async function coisas() {
     try {
         
 
-        let dados = await fetch('http://localhost:3000/users', {
+        let dados = await fetch('https://nodejs-qo6y.onrender.com/users', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -109,7 +109,7 @@ async function apagar(event){
     try {
         
 
-        let dados = await fetch(`http://localhost:3000/users/${event.currentTarget.parentElement.dataset.email}`, {
+        let dados = await fetch(`https://nodejs-qo6y.onrender.com/users/${event.currentTarget.parentElement.dataset.email}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
