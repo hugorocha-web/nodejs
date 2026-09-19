@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Cadastro de Usuarios</h1>
+    <main>
+        <div id="form">
+            <input type="text" name="nome" id="idnome" placeholder="Nome" required>
+            <input type="text" name="email" id="idemail" placeholder="Email" required>
+            <input type="number" name="idade" id="ididade" placeholder="Idade" max="100" min="4" required>
+            <input type="submit" value="Cadastrar" id="btn">
+        </div>
+    </main>
+    <article>
+        <div class="usuario" style="display: none;">
+            <div class="infos">
+                <p class="nome">Nome: Hugo</p>
+                <p class="email">Email: roxshugo424@gmail.com</p>
+                <p class="idade">Idade: 16</p>
+            </div>
+            <button id="btndelet">Deletar</button>
+        </div>
+    </article>
+    <div id="popup" class="popup-overlay">
+    <div class="popup-card">
+        <button type="button" class="popup-close">&times;</button>
+        <h2 id="tit">Título do Pop-up</h2>
+        <p id="pag">Tente novamente.</p>
+    </div>
+    </div>
+    <script src="front.js"></script>
+</body>
+</html>
